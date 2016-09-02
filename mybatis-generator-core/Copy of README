@@ -1,0 +1,6 @@
+d1.配置src/test/resources/generateConfiguration.xml
+配置mysql数据库连接
+配置要生成的表,设置要生成的service,serviceImpl,dao,mapper,entity目录
+
+2.点击src/test/java/generator/Generate.java 运行
+生成文件在src/test/java/及src/test/resources 相应目录

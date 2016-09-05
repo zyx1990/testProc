@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN" "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+
+<generatorConfiguration>
+	<classPathEntry location="../mybatis-generator/lib/mysql-connector-java-5.1.26.jar" />
+
+	<context id="MyBatis3" targetRuntime="MyBatis3">
+		
+		<!-- <plugin type="org.mybatis.generator.plugins.SerializablePlugin" />
+		    <plugin type="org.mybatis.generator.plugins.MybatisCriteriaPlugin" >
+			<property name="annotationRepository" value="com.aok.framework.mybatis.repository.MyBatisRepository"/>
+		</plugin>	
+			 -->		 
+	    
+		<!-- <plugin type="org.mybatis.generator.plugins.MybatisServicePlugin"> -->
+			<!-- 1.设置sevice seviceImpl 包路径 
+			<property name="targetPackage" value="com.aok.b2b.member.service" />
+			<property name="implementationPackage" value="com.aok.b2b.member.service.impl" />
+			<property name="targetProject" value="../mybatis-generator/src/test/java" />
+			
+			<property name="serviceRootClass" value="com.aok.framework.mybatis.service.BaseMybatisService" />
+			<property name="serviceImplRootClass" value="com.aok.framework.mybatis.service.BaseMybatisServiceImpl" />
+			
+			<property name="enableCountByExample" value="false" />
+			<property name="enableSelectByPrimaryKey" value="false" />
+			<property name="enableSelectByExample" value="false" />
+			<property name="enableInsert" value="false" />
+			<property name="enableUpdateByExampleSelective" value="false" />
+			<property name="enableInsertSelective" value="false" />
+			<property name="enableUpdateByPrimaryKey" value="false" />
+			<property name="enableDeleteByPrimaryKey" value="false" />
+			<property name="enableDeleteByExample" value="false" />
+			<property name="enableUpdateByPrimaryKeySelective" value="false" />
+			<property name="enableUpdateByExample" value="false" />
+		</plugin>
+		-->
+		
+		<!-- 2.设置数据库连接用户密码-->
+		<jdbcConnection driverClass="com.mysql.jdbc.Driver" connectionURL="jdbc:mysql://192.168.1.34:3306/dydb_test?useUnicode=true&amp;characterEncoding=UTF-8"
+			userId="admin" password="dehl0722" />
+
+		<!-- 3.设置entity包路径-->
+		<javaModelGenerator targetPackage="com.doct.common.entity.usercenter" targetProject="../mybatis-generator/src/test/java">
+			<property name="enableSubPackages" value="true" />
+			<property name="rootClass" value="com.doct.common.configer.entity.BaseEntity"/>
+		</javaModelGenerator>
+
+		<!-- 4.设置xml mapper包路径-->
+		<sqlMapGenerator targetPackage="mybatis.doct.member" targetProject="../mybatis-generator/src/test/resources">
+			<property name="enableSubPackages" value="true" />
+		</sqlMapGenerator>
+
+		<!-- 5.设置dao包路径-->
+		<javaClientGenerator type="XMLMAPPER" targetPackage="com.doct.member.dao" targetProject="../mybatis-generator/src/test/java">
+			<property name="rootInterface" value="com.doct.framework.mybatis.repository.BaseMybatisDao"/>
+		</javaClientGenerator>
+
+
+		<!-- 6.设置表明及实体名-->
+		<table tableName="his_user_extend" domainObjectName="UserExend"  >
+			<generatedKey column="id" sqlStatement="JDBC" />
+		</table>
+	</context>
+</generatorConfiguration>

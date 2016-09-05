@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+    <!-- mybatis别名定义 -->
+    <typeAliases> 
+        <package name="com.aok.b2b.entity"/>
+    </typeAliases> 
+
+    <environments default="development">
+        <environment id="development">
+        <transactionManager type="JDBC"/>
+            <dataSource type="POOLED">
+            <property name="driver" value="com.mysql.jdbc.Driver"/>
+            <property name="url" value="jdbc:mysql://192.168.1.34:3306/dydb_test" />
+            <property name="username" value="admin"/>
+            <property name="password" value="dyhl0722"/>
+            </dataSource>
+        </environment>
+    </environments>
+    
+    <!-- mybatis的mapper文件，每个xml配置文件对应一个接口 -->
+    <mappers>
+        <mapper resource="com/aok/b2b/sqlmap/MemberMapper.xml"/>
+    </mappers>
+</configuration>
